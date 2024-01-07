@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/tara-shot/static/css/main.048d9608.css",
+    "main.js": "/tara-shot/static/js/main.93b90ce7.js",
+    "index.html": "/tara-shot/index.html",
+    "main.048d9608.css.map": "/tara-shot/static/css/main.048d9608.css.map",
+    "main.93b90ce7.js.map": "/tara-shot/static/js/main.93b90ce7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.048d9608.css",
+    "static/js/main.93b90ce7.js"
+  ]
+}
