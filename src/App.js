@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
 
-function App() {
+export default function App() {
+  const [isYes, setYes] = useState(false);
+  const [top, setTop] = useState(0);
+  const [left, setLeft] = useState(0);
+  const [position, setPosition] = useState("inherit");
+  function handleClickYes() {
+    setYes(true);
+    console.log(isYes);
+  }
+
+  function handleClickNo() {
+    setTop(Math.floor(Math.random() * 400));
+    setLeft(Math.floor(Math.random() * 300));
+    setPosition("fixed");
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {!isYes ? (
+        <div className="container">
+          <div className="text-container">
+            <h1>Will you be my girlfriend? 💕</h1>
+          </div>
+          <div className="btn-container">
+            <button onClick={handleClickYes}>Yes</button>
+            <button
+              className="btn-no"
+              onClick={handleClickNo}
+              style={{
+                position: position,
+                top: top,
+                left: left,
+              }}
+            >
+              No
+            </button>
+          </div>
+        </div>
+      ) : (
+        <div className="container">
+          <h1>You are now my girlfriend!😍🥰😘</h1>
+        </div>
+      )}
+    </>
   );
 }
-
-export default App;
